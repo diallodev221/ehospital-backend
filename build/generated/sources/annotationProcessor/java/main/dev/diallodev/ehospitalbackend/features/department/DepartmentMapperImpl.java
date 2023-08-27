@@ -19,6 +19,9 @@ public class DepartmentMapperImpl implements DepartmentMapper {
 
         DepartmentDto.DepartmentDtoBuilder departmentDto = DepartmentDto.builder();
 
+        departmentDto.id( departmentEntity.getId() );
+        departmentDto.name( departmentEntity.getName() );
+
         return departmentDto.build();
     }
 
@@ -42,9 +45,11 @@ public class DepartmentMapperImpl implements DepartmentMapper {
             return null;
         }
 
-        DepartmentEntity departmentEntity = new DepartmentEntity();
+        DepartmentEntity.DepartmentEntityBuilder<?, ?> departmentEntity = DepartmentEntity.builder();
 
-        return departmentEntity;
+        departmentEntity.name( userDto.name() );
+
+        return departmentEntity.build();
     }
 
     @Override
@@ -52,5 +57,7 @@ public class DepartmentMapperImpl implements DepartmentMapper {
         if ( departmentDto == null ) {
             return;
         }
+
+        departmentEntity.setName( departmentDto.name() );
     }
 }

@@ -18,7 +18,7 @@ import java.util.Set;
 @SuperBuilder
 public class DepartmentEntity {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column(unique = true, updatable = false)

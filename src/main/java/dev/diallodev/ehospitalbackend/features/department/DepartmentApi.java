@@ -1,12 +1,11 @@
 package dev.diallodev.ehospitalbackend.features.department;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
 
+@RequestMapping("/api/departments")
 public interface DepartmentApi {
 
     @GetMapping
@@ -16,5 +15,8 @@ public interface DepartmentApi {
     DepartmentDto getById(@PathVariable Integer id);
 
     @PostMapping
-    DepartmentDto create(@RequestBody DepartmentDto departmentDto);
+    ResponseEntity<DepartmentDto> create(@RequestBody DepartmentDto departmentDto);
+
+    @PutMapping("/{id}")
+    ResponseEntity<Void> update(@PathVariable Integer id, @RequestBody DepartmentDto departmentDto);
 }

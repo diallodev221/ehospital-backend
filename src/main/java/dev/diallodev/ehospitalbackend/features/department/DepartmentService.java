@@ -21,7 +21,8 @@ public class DepartmentService {
 
     public ResponseEntity<DepartmentDto> create(DepartmentDto departmentDto) {
         DepartmentEntity departmentEntity = departmentMapper.toEntity(departmentDto);
-        departmentEntity.setCode(CodeGenerator.generateCode("DEPT"));
+        departmentEntity.setCode(CodeGenerator.generateCode("DEPT-"));
+        departmentRepository.save(departmentEntity);
         return ResponseEntity.ok().body(departmentMapper.toDto(departmentEntity));
     }
 
