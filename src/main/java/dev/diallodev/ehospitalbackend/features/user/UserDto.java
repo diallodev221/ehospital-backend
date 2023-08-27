@@ -1,5 +1,6 @@
 package dev.diallodev.ehospitalbackend.features.user;
 
+import dev.diallodev.ehospitalbackend.features.department.DepartmentDto;
 import lombok.Builder;
 
 
@@ -20,6 +21,6 @@ public record UserDto (
 
          Role role,
 
-         dev.diallodev.ehospitalbackend.features.department.DepartmentDto DepartmentDto
+         DepartmentDto departmentDto
 ) {
 }

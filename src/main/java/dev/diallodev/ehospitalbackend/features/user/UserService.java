@@ -31,8 +31,8 @@ public class UserService {
         UserEntity userEntity = userMapper.toEntity(userDto);
         userEntity.setStatus(UserStatusEnum.ACTIVE);
         userEntity.setRole(Role.MEDECIN);
-        userEntity.setCode(CodeGenerator.generateCode("USR"));
-        userEntity.setDepartment(departmentService.loadEntity(userDto.DepartmentDto().id()));
+        userEntity.setCode(CodeGenerator.generateCode("USR-"));
+        userEntity.setDepartment(departmentService.loadEntity(userDto.departmentDto().id()));
         userEntity.setPassword(CodeGenerator.generatePassword());
         userRepository.save(userEntity);
 

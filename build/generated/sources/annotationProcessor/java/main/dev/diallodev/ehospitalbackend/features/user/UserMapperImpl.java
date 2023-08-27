@@ -21,7 +21,7 @@ public class UserMapperImpl implements UserMapper {
 
         UserDto.UserDtoBuilder userDto = UserDto.builder();
 
-        userDto.DepartmentDto( departmentEntityToDepartmentDto( userEntity.getDepartment() ) );
+        userDto.departmentDto( departmentEntityToDepartmentDto( userEntity.getDepartment() ) );
         userDto.id( userEntity.getId() );
         userDto.code( userEntity.getCode() );
         userDto.firstName( userEntity.getFirstName() );

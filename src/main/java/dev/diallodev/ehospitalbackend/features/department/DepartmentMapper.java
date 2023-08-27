@@ -14,9 +14,9 @@ public interface DepartmentMapper {
 
     Collection<DepartmentDto> toDto(Collection<DepartmentEntity> departmentEntities);
 
-//    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "id", ignore = true)
     DepartmentEntity toEntity(DepartmentDto userDto);
 
-//    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "id", ignore = true)
     void updateEntity(DepartmentDto departmentDto, @MappingTarget DepartmentEntity departmentEntity);
 }

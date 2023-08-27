@@ -10,7 +10,7 @@ import java.util.Collection;
 @Mapper
 public interface UserMapper {
 
-    @Mapping(target = "DepartmentDto.id", source = "department.id")
+    @Mapping(target = "departmentDto.id", source = "department.id")
     UserDto toDto(UserEntity userEntity);
 
     Collection<UserDto> toDto(Collection<UserEntity> userEntities);
