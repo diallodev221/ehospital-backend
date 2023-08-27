@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: ehospital-backend
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/ehospital
+    username: diallodev
+    password: letmeenter
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+#    database-platform: org.hibernate.dialect.postgreSQLDialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.postgreSQLDialect
